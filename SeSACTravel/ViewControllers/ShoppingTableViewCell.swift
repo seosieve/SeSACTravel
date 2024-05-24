@@ -1,0 +1,27 @@
+//
+//  ShoppingTableViewCell.swift
+//  SeSACTravel
+//
+//  Created by 서충원 on 5/24/24.
+//
+
+import UIKit
+
+class ShoppingTableViewCell: UITableViewCell {
+    
+    @IBOutlet var containerView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected {
+            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve) {
+                self.setSelected(false, animated: animated)
+            }
+        }
+    }
+}
