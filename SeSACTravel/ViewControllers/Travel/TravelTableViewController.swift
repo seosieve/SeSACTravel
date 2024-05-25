@@ -14,11 +14,6 @@ class TravelTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViews()
-    }
-    
-    func setViews() {
-        
     }
 }
 

@@ -10,6 +10,7 @@ import Foundation
 enum CellIdentifier: String, CaseIterable {
     case shoppingTableViewCell
     case travelTableViewCell
+    case restaurantViewCell
 
     var description: String {
         return String(describing: self)
