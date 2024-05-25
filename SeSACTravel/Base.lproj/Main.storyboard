@@ -40,6 +40,9 @@
                                             <buttonConfiguration key="configuration" style="plain" title="추가">
                                                 <color key="baseForegroundColor" red="0.23641274640000001" green="0.23641274640000001" blue="0.23641274640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="addButtonPressed:" destination="R1u-Yh-JiV" eventType="touchUpInside" id="2Dq-jn-IeV"/>
+                                            </connections>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="무엇을 구매하실 건가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HPL-ru-ZvZ">
                                             <rect key="frame" x="20" y="15" width="243" height="35"/>
@@ -107,8 +110,8 @@
                                                     </buttonConfiguration>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYx-5A-i6v">
-                                                    <rect key="frame" x="70" y="14" width="213" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="70" y="15.666666666666668" width="213" height="18.000000000000004"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -133,7 +136,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="checkButton" destination="5zu-Ya-drW" id="kDS-DI-gm5"/>
                                     <outlet property="containerView" destination="ULp-Qe-7C9" id="eDF-MT-BGA"/>
+                                    <outlet property="favoredButton" destination="yJH-DA-dJd" id="bvj-qk-NmY"/>
+                                    <outlet property="titleLable" destination="sYx-5A-i6v" id="Tbf-Rz-yaW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
