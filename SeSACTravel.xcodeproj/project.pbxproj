@@ -14,6 +14,11 @@
 		4EFC6B422C00940D00421377 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4EFC6B412C00940D00421377 /* Base */; };
 		4EFC6B4B2C00954100421377 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B4A2C00954100421377 /* ShoppingTableViewCell.swift */; };
 		4EFC6B4D2C00955400421377 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B4C2C00955400421377 /* ShoppingTableViewController.swift */; };
+		4EFC6B4F2C01E40000421377 /* MagazineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B4E2C01E40000421377 /* MagazineInfo.swift */; };
+		4EFC6B522C01E5EE00421377 /* TravelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B512C01E5EE00421377 /* TravelTableViewController.swift */; };
+		4EFC6B542C01E5FC00421377 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B532C01E5FC00421377 /* TravelTableViewCell.swift */; };
+		4EFC6B562C01E6E700421377 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B552C01E6E700421377 /* Identifiers.swift */; };
+		4EFC6B592C01EC0600421377 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4EFC6B582C01EC0600421377 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,10 @@
 		4EFC6B432C00940D00421377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EFC6B4A2C00954100421377 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		4EFC6B4C2C00955400421377 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
+		4EFC6B4E2C01E40000421377 /* MagazineInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
+		4EFC6B512C01E5EE00421377 /* TravelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewController.swift; sourceTree = "<group>"; };
+		4EFC6B532C01E5FC00421377 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
+		4EFC6B552C01E6E700421377 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EFC6B592C01EC0600421377 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +68,7 @@
 		4EFC6B342C00940C00421377 /* SeSACTravel */ = {
 			isa = PBXGroup;
 			children = (
+				4EFC6B502C01E46F00421377 /* Model */,
 				4EFC6B492C0094FD00421377 /* ViewControllers */,
 				4EFC6B352C00940C00421377 /* AppDelegate.swift */,
 				4EFC6B372C00940C00421377 /* SceneDelegate.swift */,
@@ -74,8 +85,19 @@
 			children = (
 				4EFC6B4A2C00954100421377 /* ShoppingTableViewCell.swift */,
 				4EFC6B4C2C00955400421377 /* ShoppingTableViewController.swift */,
+				4EFC6B532C01E5FC00421377 /* TravelTableViewCell.swift */,
+				4EFC6B512C01E5EE00421377 /* TravelTableViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4EFC6B502C01E46F00421377 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4EFC6B4E2C01E40000421377 /* MagazineInfo.swift */,
+				4EFC6B552C01E6E700421377 /* Identifiers.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +116,9 @@
 			dependencies = (
 			);
 			name = SeSACTravel;
+			packageProductDependencies = (
+				4EFC6B582C01EC0600421377 /* Kingfisher */,
+			);
 			productName = SeSACTravel;
 			productReference = 4EFC6B322C00940C00421377 /* SeSACTravel.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +147,9 @@
 				Base,
 			);
 			mainGroup = 4EFC6B292C00940C00421377;
+			packageReferences = (
+				4EFC6B572C01EC0600421377 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 4EFC6B332C00940C00421377 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,9 +178,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EFC6B362C00940C00421377 /* AppDelegate.swift in Sources */,
+				4EFC6B522C01E5EE00421377 /* TravelTableViewController.swift in Sources */,
+				4EFC6B562C01E6E700421377 /* Identifiers.swift in Sources */,
+				4EFC6B542C01E5FC00421377 /* TravelTableViewCell.swift in Sources */,
 				4EFC6B4D2C00955400421377 /* ShoppingTableViewController.swift in Sources */,
 				4EFC6B4B2C00954100421377 /* ShoppingTableViewCell.swift in Sources */,
 				4EFC6B382C00940C00421377 /* SceneDelegate.swift in Sources */,
+				4EFC6B4F2C01E40000421377 /* MagazineInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +417,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4EFC6B572C01EC0600421377 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4EFC6B582C01EC0600421377 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4EFC6B572C01EC0600421377 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4EFC6B2A2C00940C00421377 /* Project object */;
 }

@@ -7,21 +7,24 @@
 
 import UIKit
 
-struct Work: Codable {
-    var title: String
-    var isFinished: Bool
+struct Shopping: Codable {
+    let title: String
+    var finished: Bool = false
+    var favorited: Bool = false
 }
 
 class UserDefaultsManager {
+    private static let userDefault = UserDefaults.standard
+    
     static func set<T: Codable>(_ value: T, forKey key: String) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(value) {
-            UserDefaults.standard.set(encoded, forKey: key)
+            userDefault.set(encoded, forKey: key)
         }
     }
     
     static func get<T: Codable>(forKey key: String, as type: T.Type) -> T? {
-        if let data = UserDefaults.standard.data(forKey: key) {
+        if let data = userDefault.data(forKey: key) {
             let decoder = JSONDecoder()
             if let decoded = try? decoder.decode(type, from: data) {
                 return decoded
@@ -31,25 +34,30 @@ class UserDefaultsManager {
     }
 }
 
-struct Shopping {
-    let title: String
-    var finished: Bool
-    var favorited: Bool
-}
-
 class ShoppingTableViewController: UITableViewController {
     
+    @IBOutlet var shoppingTextField: UITextField!
     @IBOutlet var containerView: UIView!
     @IBOutlet var addButton: UIButton!
     
-    var shoppingList = [Shopping(title: "그립톡 구매하기", finished: false, favorited: false),
-                        Shopping(title: "사이다 구매", finished: false, favorited: false),
-                        Shopping(title: "아이패드 케이스 최저가 알아보기", finished: false, favorited: false),
-                        Shopping(title: "고양이 빨래", finished: false, favorited: false)]
+    var shoppingList = [Shopping]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setShoppingList()
         setViews()
+        print(shoppingList)
+    }
+    
+    func setShoppingList() {
+        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+            if key.hasPrefix("shopping_") {
+                if let shopping = UserDefaultsManager.get(forKey: key, as: Shopping.self) {
+                    shoppingList.append(Shopping(title: shopping.title, finished: shopping.finished, favorited: shopping.favorited))
+                }
+            }
+        }
+        shoppingList.sort{$0.title < $1.title}
     }
     
     func setViews() {
@@ -60,11 +68,16 @@ class ShoppingTableViewController: UITableViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
-//        let work = Work(title: "김치구이", isFinished: true)
-//        UserDefaultsManager.set(work, forKey: "work1")
-//        if let savedWork = UserDefaultsManager.get(forKey: "work1", as: Work.self) {
-//            print(savedWork.title, savedWork.isFinished)
-//        }
+        let text = shoppingTextField.text ?? ""
+        
+        if !text.isEmpty {
+            let shopping = Shopping(title: text)
+            UserDefaultsManager.set(shopping, forKey: "shopping_\(text)")
+            shoppingList.append(shopping)
+            shoppingTextField.text = ""
+        }
+        
+        tableView.reloadData()
     }
 }
 
@@ -77,8 +90,8 @@ extension ShoppingTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let shopping = shoppingList[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
+        let identifier = CellIdentifier.shoppingTableViewCell.description
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ShoppingTableViewCell
         cell.containerView.layer.cornerRadius = 8
         cell.titleLable.text = shopping.title
         
@@ -97,11 +110,16 @@ extension ShoppingTableViewController {
     
     @objc func checkButtonPressed(_ sender: UIButton) {
         shoppingList[sender.tag].finished.toggle()
+        let shopping = shoppingList[sender.tag]
+        UserDefaultsManager.set(shopping, forKey: "shopping_\(shopping.title)")
         tableView.reloadRows(at: [[0,sender.tag]], with: .automatic)
+        print(shoppingList)
     }
     
     @objc func favoredButtonPressed(_ sender: UIButton) {
         shoppingList[sender.tag].favorited.toggle()
+        let shopping = shoppingList[sender.tag]
+        UserDefaultsManager.set(shopping, forKey: "shopping_\(shopping.title)")
         tableView.reloadRows(at: [[0,sender.tag]], with: .automatic)
     }
 }
