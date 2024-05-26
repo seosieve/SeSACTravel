@@ -15,10 +15,12 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet var numberLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet var likeButton: UIButton!
+    @IBOutlet var flagButton: UIButton!
+    @IBOutlet var shareButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

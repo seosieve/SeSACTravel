@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E4A3B7B2C03303700EBE319 /* SSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A3B7A2C03303700EBE319 /* SSUserDefaults.swift */; };
 		4EFC6B362C00940C00421377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B352C00940C00421377 /* AppDelegate.swift */; };
 		4EFC6B382C00940C00421377 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B372C00940C00421377 /* SceneDelegate.swift */; };
 		4EFC6B3D2C00940C00421377 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4EFC6B3C2C00940C00421377 /* Base */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E4A3B7A2C03303700EBE319 /* SSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUserDefaults.swift; sourceTree = "<group>"; };
 		4EFC6B322C00940C00421377 /* SeSACTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFC6B352C00940C00421377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EFC6B372C00940C00421377 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				4EFC6B4E2C01E40000421377 /* MagazineInfo.swift */,
 				4EFC6B5A2C01F11C00421377 /* Restaurant.swift */,
 				4EFC6B552C01E6E700421377 /* Identifiers.swift */,
+				4E4A3B7A2C03303700EBE319 /* SSUserDefaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4A3B7B2C03303700EBE319 /* SSUserDefaults.swift in Sources */,
 				4EFC6B362C00940C00421377 /* AppDelegate.swift in Sources */,
 				4EFC6B522C01E5EE00421377 /* TravelTableViewController.swift in Sources */,
 				4EFC6B602C01F3E300421377 /* RestaurantTableViewController.swift in Sources */,
