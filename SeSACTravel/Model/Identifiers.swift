@@ -11,6 +11,8 @@ enum CellIdentifier {
     case shoppingTableViewCell
     case travelTableViewCell
     case restaurantViewCell
+    case CityTableViewCell
+    case AdTableViewCell
 
     var description: String {
         return String(describing: self)

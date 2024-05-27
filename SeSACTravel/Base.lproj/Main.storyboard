@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M8I-Jg-6c3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pP6-Ps-VrR">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -501,7 +502,55 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PU6-1F-dI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655.7251908396945" y="-704.22535211267609"/>
+            <point key="canvasLocation" x="1732" y="-704"/>
+        </scene>
+        <!--City View Controller-->
+        <scene sceneID="lpY-xf-Rox">
+            <objects>
+                <viewController id="pP6-Ps-VrR" customClass="CityViewController" customModule="SeSACTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="04y-mq-jN4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="B7V-fS-XEE">
+                                <rect key="frame" x="0.0" y="98" width="393" height="720"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도시 상세 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIp-8q-gDQ">
+                                <rect key="frame" x="145" y="67" width="103" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HN9-HM-meI">
+                                <rect key="frame" x="0.0" y="97" width="393" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="6df-EP-kcd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="526-h5-JZt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B7V-fS-XEE" firstAttribute="leading" secondItem="526-h5-JZt" secondAttribute="leading" id="1LI-fZ-W2c"/>
+                            <constraint firstItem="B7V-fS-XEE" firstAttribute="top" secondItem="HN9-HM-meI" secondAttribute="bottom" id="27V-AR-Fjd"/>
+                            <constraint firstItem="526-h5-JZt" firstAttribute="bottom" secondItem="B7V-fS-XEE" secondAttribute="bottom" id="4aL-VW-hov"/>
+                            <constraint firstItem="XIp-8q-gDQ" firstAttribute="top" secondItem="526-h5-JZt" secondAttribute="top" constant="8" id="6UM-kk-FQt"/>
+                            <constraint firstItem="526-h5-JZt" firstAttribute="trailing" secondItem="B7V-fS-XEE" secondAttribute="trailing" id="W05-Wl-OCd"/>
+                            <constraint firstItem="XIp-8q-gDQ" firstAttribute="centerX" secondItem="04y-mq-jN4" secondAttribute="centerX" id="jfI-fI-Q5K"/>
+                            <constraint firstItem="HN9-HM-meI" firstAttribute="leading" secondItem="526-h5-JZt" secondAttribute="leading" id="tbF-3P-Kp0"/>
+                            <constraint firstItem="HN9-HM-meI" firstAttribute="top" secondItem="XIp-8q-gDQ" secondAttribute="bottom" constant="8" id="v1L-ez-ql1"/>
+                            <constraint firstItem="HN9-HM-meI" firstAttribute="centerX" secondItem="04y-mq-jN4" secondAttribute="centerX" id="xeK-38-OE6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityTableView" destination="B7V-fS-XEE" id="iu5-fv-nds"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpy-5G-Q2M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2483" y="-704"/>
         </scene>
     </scenes>
     <resources>
