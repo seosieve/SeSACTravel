@@ -12,8 +12,10 @@ class RestaurantTableViewController: UITableViewController {
     
     @IBOutlet var restaurantContainerView: UIView!
     @IBOutlet var searchButton: UIButton!
+    @IBOutlet var textField: UITextField!
     
-    let restaurantArray = RestaurantList().restaurantArray
+    let originalArray = RestaurantList().restaurantArray
+    var restaurantArray = RestaurantList().restaurantArray
     lazy var likeArr = Array(repeating: false, count: restaurantArray.count)
     
     override func viewDidLoad() {
@@ -25,6 +27,44 @@ class RestaurantTableViewController: UITableViewController {
         restaurantContainerView.layer.cornerRadius = 8
         searchButton.layer.cornerRadius = 4
     }
+    
+    @IBAction func textFieldAction(_ sender: UITextField) {
+        searchLogic()
+    }
+    
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        searchLogic()
+    }
+    
+    func searchLogic() {
+        guard let text = textField.text else { return }
+        if text.isEmpty {
+            restaurantArray = originalArray
+            tableView.reloadData()
+        } else {
+            //문자일때
+            if Int(text) == nil {
+                restaurantArray = []
+                for item in originalArray {
+                    if item.category.contains(text) {
+                        restaurantArray.append(item)
+                    }
+                }
+                tableView.reloadData()
+                print("aa")
+            } else {
+                //숫자일때
+                restaurantArray = []
+                for item in originalArray {
+                    if item.price <= Int(text)! {
+                        restaurantArray.append(item)
+                    }
+                }
+                tableView.reloadData()
+                print("bb")
+            }
+        }
+    }
 }
 
 extension RestaurantTableViewController {
@@ -34,7 +74,6 @@ extension RestaurantTableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let restaurant = restaurantArray[indexPath.row]
-        print(restaurant.address.count, indexPath.row)
         if restaurant.address.count < 27 {
             return 400
         } else {
@@ -57,7 +96,7 @@ extension RestaurantTableViewController {
         cell.titleLabel.text = restaurant.name
         cell.locationLabel.text = restaurant.address
         cell.numberLabel.text = restaurant.phoneNumber
-        cell.priceLabel.text = String(restaurant.price)
+        cell.priceLabel.text = restaurant.price.formatted()
         cell.categoryLabel.text = restaurant.category
         
         let likeImage = likeArr[indexPath.row] ? "heart.fill" : "heart"

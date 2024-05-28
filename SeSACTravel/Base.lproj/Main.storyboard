@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pP6-Ps-VrR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M8I-Jg-6c3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -294,6 +294,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="textFieldAction:" destination="M8I-Jg-6c3" eventType="editingDidEndOnExit" id="x2A-2L-hhN"/>
+                                            </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dY0-6X-ZiK">
                                             <rect key="frame" x="272" y="7.6666666666666643" width="74" height="35"/>
@@ -306,6 +309,9 @@
                                             <buttonConfiguration key="configuration" style="plain" title="SEARCH">
                                                 <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="searchButtonPressed:" destination="M8I-Jg-6c3" eventType="touchUpInside" id="11C-MZ-aOe"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -498,6 +504,7 @@
                     <connections>
                         <outlet property="restaurantContainerView" destination="UCz-gu-hMs" id="8gH-ex-ORf"/>
                         <outlet property="searchButton" destination="dY0-6X-ZiK" id="um8-GN-gd0"/>
+                        <outlet property="textField" destination="IlJ-xV-u91" id="5th-Z8-YEY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PU6-1F-dI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
