@@ -16,6 +16,7 @@ class TravelTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,5 +26,19 @@ class TravelTableViewCell: UITableViewCell {
                 self.setSelected(false, animated: animated)
             }
         }
+    }
+    
+    func configureUI() {
+        travelImageView.layer.masksToBounds = true
+        travelImageView.layer.cornerRadius = 12
+        travelImageView.contentMode = .scaleAspectFill
+    }
+    
+    func configureCell(_ magazine: Magazine) {
+        let url = URL(string: magazine.photo_image)
+        travelImageView.kf.setImage(with: url)
+        travelTitleLabel.text = magazine.title
+        travelSubtitleLabel.text = magazine.subtitle
+        dateLabel.text = magazine.formattedDate
     }
 }
