@@ -22,7 +22,6 @@ class CityViewController: UIViewController {
         let adNib = UINib(nibName: CellIdentifier.AdTableViewCell.description, bundle: nil)
         cityTableView.register(adNib, forCellReuseIdentifier: CellIdentifier.AdTableViewCell.description)
     }
-
 }
 
 extension CityViewController: UITableViewDelegate, UITableViewDataSource {
@@ -38,21 +37,15 @@ extension CityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let travel = travelArr[indexPath.row]
  
-        
         if travel.ad {
             let identifier = CellIdentifier.AdTableViewCell.description
             let cell =  tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! AdTableViewCell
-            cell.adTitleLabel.text = travel.title
+            cell.configureCell(travel)
             return cell
         } else {
             let identifier = CellIdentifier.CityTableViewCell.description
             let cell =  tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CityTableViewCell
-            cell.titleLabel.text = travel.title
-            cell.subTitleLabel.text = travel.description!
-            cell.scoreLabel.text = "(\(travel.grade!))"
-            cell.saveLabel.text = "저장 \(travel.save!)"
-            let url = URL(string: travel.travel_image!)
-            cell.cityImageView.kf.setImage(with: url)
+            cell.configureCell(travel)
             return cell
         }
     }

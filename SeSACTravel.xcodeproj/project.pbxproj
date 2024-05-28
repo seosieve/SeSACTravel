@@ -14,6 +14,7 @@
 		4E4A3B952C04C83400EBE319 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A3B942C04C83400EBE319 /* CityViewController.swift */; };
 		4ECF22552C04D9FF007E6DCE /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF22532C04D9FF007E6DCE /* AdTableViewCell.swift */; };
 		4ECF22562C04D9FF007E6DCE /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF22542C04D9FF007E6DCE /* AdTableViewCell.xib */; };
+		4ECF22952C05DB1E007E6DCE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */; };
 		4EFC6B362C00940C00421377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B352C00940C00421377 /* AppDelegate.swift */; };
 		4EFC6B382C00940C00421377 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B372C00940C00421377 /* SceneDelegate.swift */; };
 		4EFC6B3D2C00940C00421377 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4EFC6B3C2C00940C00421377 /* Base */; };
@@ -39,6 +40,7 @@
 		4E4A3B942C04C83400EBE319 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		4ECF22532C04D9FF007E6DCE /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
 		4ECF22542C04D9FF007E6DCE /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
+		4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		4EFC6B322C00940C00421377 /* SeSACTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFC6B352C00940C00421377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EFC6B372C00940C00421377 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,13 +74,21 @@
 		4E4A3B932C04C7A100EBE319 /* City */ = {
 			isa = PBXGroup;
 			children = (
-				4E4A3B8F2C04C79A00EBE319 /* CityTableViewCell.swift */,
 				4E4A3B942C04C83400EBE319 /* CityViewController.swift */,
+				4E4A3B8F2C04C79A00EBE319 /* CityTableViewCell.swift */,
 				4E4A3B902C04C79A00EBE319 /* CityTableViewCell.xib */,
 				4ECF22532C04D9FF007E6DCE /* AdTableViewCell.swift */,
 				4ECF22542C04D9FF007E6DCE /* AdTableViewCell.xib */,
 			);
 			path = City;
+			sourceTree = "<group>";
+		};
+		4ECF22932C05DB0F007E6DCE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		4EFC6B292C00940C00421377 = {
@@ -100,6 +110,7 @@
 		4EFC6B342C00940C00421377 /* SeSACTravel */ = {
 			isa = PBXGroup;
 			children = (
+				4ECF22932C05DB0F007E6DCE /* Extension */,
 				4EFC6B502C01E46F00421377 /* Model */,
 				4EFC6B492C0094FD00421377 /* ViewControllers */,
 				4EFC6B352C00940C00421377 /* AppDelegate.swift */,
@@ -245,6 +256,7 @@
 				4EFC6B362C00940C00421377 /* AppDelegate.swift in Sources */,
 				4EFC6B522C01E5EE00421377 /* TravelTableViewController.swift in Sources */,
 				4EFC6B602C01F3E300421377 /* RestaurantTableViewController.swift in Sources */,
+				4ECF22952C05DB1E007E6DCE /* UIColor+Extension.swift in Sources */,
 				4EFC6B622C01F52A00421377 /* RestaurantTableViewCell.swift in Sources */,
 				4EFC6B562C01E6E700421377 /* Identifiers.swift in Sources */,
 				4EFC6B542C01E5FC00421377 /* TravelTableViewCell.swift in Sources */,

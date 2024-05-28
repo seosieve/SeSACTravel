@@ -14,6 +14,7 @@ class CityTableViewCell: UITableViewCell {
     @IBOutlet var subTitleLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var saveLabel: UILabel!
+    @IBOutlet var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,4 +36,17 @@ class CityTableViewCell: UITableViewCell {
         cityImageView.contentMode = .scaleAspectFill
     }
     
+    func configureCell(_ travel: Travel) {
+        titleLabel.text = travel.title
+        subTitleLabel.text = travel.description!
+        scoreLabel.text = travel.gradeString
+        saveLabel.text = travel.saveString
+        let url = URL(string: travel.travel_image!)
+        cityImageView.kf.setImage(with: url)
+        
+        let image = travel.like! ? "heart.fill" : "heart"
+        let color: UIColor = travel.like! ? .red : .white
+        likeButton.setImage(UIImage(systemName: image), for: .normal)
+        likeButton.tintColor = color
+    }
 }

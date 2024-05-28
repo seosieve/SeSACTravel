@@ -28,18 +28,13 @@ class AdTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
-        adBackgroundView.backgroundColor = RandomColor()
+        adBackgroundView.backgroundColor = UIColor.randomColor
         adBackgroundView.layer.cornerRadius = 8
         adLabel.layer.masksToBounds = true
         adLabel.layer.cornerRadius = 8
     }
     
-    func RandomColor() -> UIColor {
-        let red = CGFloat.random(in: 0...1)
-        let green = CGFloat.random(in: 0...1)
-        let blue = CGFloat.random(in: 0...1)
-        let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-        return color
+    func configureCell(_ travel: Travel) {
+        adTitleLabel.text = travel.title
     }
-    
 }

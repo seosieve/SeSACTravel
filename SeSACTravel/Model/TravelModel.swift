@@ -14,6 +14,14 @@ struct Travel {
     let save: Int?
     let like: Bool?
     let ad: Bool
+    
+    var gradeString: String {
+        "(\(grade ?? 0))"
+    }
+    
+    var saveString: String {
+        "저장 \(save ?? 0)"
+    }
 }
 
 struct TravelInfo {
@@ -109,7 +117,7 @@ struct TravelInfo {
                save: 44507,
                like: true,
                ad: false),
-        Travel(title: "제주 비행기 최저가! 예약 문의는 취업부터!",
+        Travel(title: "제주 비행기 최저가!\n예약 문의는 취업부터!",
                description: nil,
                travel_image: nil,
                grade: nil,
