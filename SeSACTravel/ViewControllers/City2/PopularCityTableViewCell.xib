@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="PopularCityTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="146" id="KGk-i7-Jjw" customClass="PopularCityTableViewCell" customModule="SeSACTravel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="146"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="146"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrx-vl-pbp">
+                        <rect key="frame" x="20" y="10" width="330" height="126"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n8w-4N-ASl">
+                                <rect key="frame" x="0.0" y="0.0" width="330" height="126"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjh-KB-bTY">
+                                <rect key="frame" x="0.0" y="91" width="330" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오사카, 교토, 나라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRq-xO-lT5">
+                                        <rect key="frame" x="10" y="8.6666666666666714" width="107.33333333333333" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23641274640000001" green="0.23641274640000001" blue="0.23641274640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="JhR-Tn-CJh"/>
+                                    <constraint firstItem="mRq-xO-lT5" firstAttribute="centerY" secondItem="zjh-KB-bTY" secondAttribute="centerY" id="Mdg-VO-rs0"/>
+                                    <constraint firstItem="mRq-xO-lT5" firstAttribute="leading" secondItem="zjh-KB-bTY" secondAttribute="leading" constant="10" id="uKA-bN-HAn"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오사카 | Osaka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxJ-Jj-Gbr">
+                                <rect key="frame" x="191" y="10" width="125" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zjh-KB-bTY" secondAttribute="trailing" id="BBf-Pc-jjB"/>
+                            <constraint firstItem="n8w-4N-ASl" firstAttribute="top" secondItem="Hrx-vl-pbp" secondAttribute="top" id="DbB-zp-PLq"/>
+                            <constraint firstAttribute="bottom" secondItem="zjh-KB-bTY" secondAttribute="bottom" id="Dc0-b1-YJQ"/>
+                            <constraint firstItem="zjh-KB-bTY" firstAttribute="leading" secondItem="Hrx-vl-pbp" secondAttribute="leading" id="MMW-N1-MsV"/>
+                            <constraint firstAttribute="trailing" secondItem="bxJ-Jj-Gbr" secondAttribute="trailing" constant="14" id="MgO-2h-yGL"/>
+                            <constraint firstAttribute="bottom" secondItem="n8w-4N-ASl" secondAttribute="bottom" id="VIX-HK-ciB"/>
+                            <constraint firstItem="n8w-4N-ASl" firstAttribute="leading" secondItem="Hrx-vl-pbp" secondAttribute="leading" id="YZn-46-q43"/>
+                            <constraint firstItem="bxJ-Jj-Gbr" firstAttribute="top" secondItem="Hrx-vl-pbp" secondAttribute="top" constant="10" id="cDJ-O8-elX"/>
+                            <constraint firstAttribute="trailing" secondItem="n8w-4N-ASl" secondAttribute="trailing" id="tBI-qT-LIR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Hrx-vl-pbp" secondAttribute="bottom" constant="10" id="F1Z-hw-Kv4"/>
+                    <constraint firstAttribute="trailing" secondItem="Hrx-vl-pbp" secondAttribute="trailing" constant="20" id="NkM-2h-p7D"/>
+                    <constraint firstItem="Hrx-vl-pbp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ssm-oo-IUJ"/>
+                    <constraint firstItem="Hrx-vl-pbp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="utL-Wx-A7g"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerImageView" destination="n8w-4N-ASl" id="Zmj-2w-Uzl"/>
+                <outlet property="containerView" destination="Hrx-vl-pbp" id="Bcu-q0-f7C"/>
+                <outlet property="subtitleLabel" destination="mRq-xO-lT5" id="WJi-b6-1Tu"/>
+                <outlet property="subtitleView" destination="zjh-KB-bTY" id="z57-fZ-QKk"/>
+                <outlet property="titleLabel" destination="bxJ-Jj-Gbr" id="QFf-p2-Lji"/>
+            </connections>
+            <point key="canvasLocation" x="167.93893129770993" y="23.239436619718312"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

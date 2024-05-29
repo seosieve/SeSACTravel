@@ -90,7 +90,7 @@ extension ShoppingTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let shopping = shoppingList[indexPath.row]
-        let identifier = CellIdentifier.shoppingTableViewCell.description
+        let identifier = Identifier.shoppingTableViewCell.description
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ShoppingTableViewCell
         cell.containerView.layer.cornerRadius = 8
         cell.titleLable.text = shopping.title

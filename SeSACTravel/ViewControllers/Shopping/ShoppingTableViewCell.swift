@@ -20,10 +20,6 @@ class ShoppingTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        if selected {
-            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve) {
-                self.setSelected(false, animated: animated)
-            }
-        }
+        selectionAnimation()
     }
 }

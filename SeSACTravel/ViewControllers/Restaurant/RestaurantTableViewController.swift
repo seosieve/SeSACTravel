@@ -83,7 +83,7 @@ extension RestaurantTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let restaurant = restaurantArray[indexPath.row]
-        let identifier = CellIdentifier.restaurantViewCell.description
+        let identifier = Identifier.restaurantViewCell.description
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! RestaurantTableViewCell
         
         

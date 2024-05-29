@@ -7,12 +7,15 @@
 
 import Foundation
 
-enum CellIdentifier {
+enum Identifier {
     case shoppingTableViewCell
     case travelTableViewCell
     case restaurantViewCell
     case CityTableViewCell
     case AdTableViewCell
+    case PopularCityTableViewCell
+    case CityDetailViewController
+    case AdDetailViewController
 
     var description: String {
         return String(describing: self)
