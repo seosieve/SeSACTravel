@@ -30,18 +30,21 @@ class PopularCityTableViewCell: UITableViewCell {
         containerView.layer.masksToBounds = true
         containerView.layer.cornerRadius = 40
         containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
-        
         containerImageView.contentMode = .scaleAspectFill
-        
-        subtitleView.backgroundColor = .darkGray.withAlphaComponent(0.8)
+        subtitleView.backgroundColor = .black.withAlphaComponent(0.6)
     }
     
-    func configureCell(city: City) {
-        titleLabel.text = city.city_title
-        
+    func configureCell(city: City, targetText: String) {
+        subtitleLabel.attributedText = highlighted(city.city_explain, targetText)
+        titleLabel.attributedText = highlighted(city.city_title, targetText)
         let url = URL(string: city.city_image)
         containerImageView.kf.setImage(with: url)
-        
-        subtitleLabel.text = city.city_explain
+    }
+    
+    func highlighted(_ originalString: String, _ changingString: String) -> NSMutableAttributedString {
+        let attrStr = NSMutableAttributedString(string: originalString)
+        let value = UIColor.blue
+        attrStr.addAttribute(.foregroundColor, value: value, range: (originalString as NSString).range(of: changingString))
+        return attrStr
     }
 }

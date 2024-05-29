@@ -605,36 +605,51 @@
                                     <constraint firstAttribute="height" constant="1" id="Qeb-ba-O6u"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9fh-ZW-r0k">
+                                <rect key="frame" x="0.0" y="104" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gWA-uO-vbm" id="fGo-o6-FyG"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NZ2-G6-Js0">
-                                <rect key="frame" x="0.0" y="175" width="393" height="677"/>
+                                <rect key="frame" x="0.0" y="221" width="393" height="631"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Uq1-zz-O2h">
-                                <rect key="frame" x="20" y="124" width="353" height="32"/>
+                                <rect key="frame" x="20" y="170" width="353" height="32"/>
                                 <segments>
                                     <segment title="모두"/>
                                     <segment title="국내"/>
                                     <segment title="해외"/>
                                 </segments>
+                                <connections>
+                                    <action selector="controlValueChanged:" destination="gWA-uO-vbm" eventType="valueChanged" id="RMP-fR-rIh"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jaf-nd-IO6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9fh-ZW-r0k" firstAttribute="top" secondItem="rJz-R1-bzv" secondAttribute="bottom" id="5GK-KQ-a53"/>
+                            <constraint firstAttribute="trailing" secondItem="9fh-ZW-r0k" secondAttribute="trailing" id="FaL-4W-CzN"/>
                             <constraint firstItem="rJz-R1-bzv" firstAttribute="top" secondItem="jaf-nd-IO6" secondAttribute="top" id="GwU-NL-NSx"/>
                             <constraint firstAttribute="bottom" secondItem="NZ2-G6-Js0" secondAttribute="bottom" id="Kks-tG-Qqw"/>
                             <constraint firstAttribute="trailing" secondItem="NZ2-G6-Js0" secondAttribute="trailing" id="Nic-HC-Jxt"/>
                             <constraint firstItem="rJz-R1-bzv" firstAttribute="leading" secondItem="kRp-0L-xcm" secondAttribute="leading" id="Q3u-MM-NwS"/>
+                            <constraint firstItem="Uq1-zz-O2h" firstAttribute="top" secondItem="9fh-ZW-r0k" secondAttribute="bottom" constant="10" id="aiH-HV-KVp"/>
                             <constraint firstItem="NZ2-G6-Js0" firstAttribute="top" secondItem="Uq1-zz-O2h" secondAttribute="bottom" constant="20" id="hAs-tH-coF"/>
                             <constraint firstItem="Uq1-zz-O2h" firstAttribute="centerX" secondItem="kRp-0L-xcm" secondAttribute="centerX" id="kzX-6P-dLI"/>
                             <constraint firstItem="Uq1-zz-O2h" firstAttribute="leading" secondItem="kRp-0L-xcm" secondAttribute="leading" constant="20" id="lnQ-sq-rgM"/>
-                            <constraint firstItem="Uq1-zz-O2h" firstAttribute="top" secondItem="rJz-R1-bzv" secondAttribute="bottom" constant="20" id="tin-xh-iFH"/>
                             <constraint firstItem="NZ2-G6-Js0" firstAttribute="leading" secondItem="kRp-0L-xcm" secondAttribute="leading" id="uYa-on-Fsh"/>
+                            <constraint firstItem="9fh-ZW-r0k" firstAttribute="leading" secondItem="kRp-0L-xcm" secondAttribute="leading" id="v3E-US-Y17"/>
                             <constraint firstItem="rJz-R1-bzv" firstAttribute="centerX" secondItem="kRp-0L-xcm" secondAttribute="centerX" id="xQh-C9-jK0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="인기 도시" id="nH3-Hu-8wB"/>
                     <connections>
+                        <outlet property="searchBar" destination="9fh-ZW-r0k" id="zda-jz-FHI"/>
+                        <outlet property="segmentControl" destination="Uq1-zz-O2h" id="BbA-xC-Zn4"/>
                         <outlet property="tableView" destination="NZ2-G6-Js0" id="wm0-sV-BJJ"/>
                     </connections>
                 </viewController>
