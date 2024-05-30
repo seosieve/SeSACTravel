@@ -7,7 +7,12 @@
 
 import UIKit
 
-extension UITableViewCell {
+extension UITableViewCell: ReusableViewProtocol {
+    //Automatically Create Identifier
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
+    
     //Animation when TableView Selected
     func selectionAnimation() {
         if self.isSelected {

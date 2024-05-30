@@ -19,6 +19,7 @@
 		4E7715102C07702D0069923D /* PopularCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77150E2C07702D0069923D /* PopularCityTableViewCell.swift */; };
 		4E7715112C07702D0069923D /* PopularCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E77150F2C07702D0069923D /* PopularCityTableViewCell.xib */; };
 		4E7715132C0771970069923D /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7715122C0771970069923D /* UITableViewCell+Extension.swift */; };
+		4E77151E2C08867F0069923D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77151D2C08867F0069923D /* UIViewController+Extension.swift */; };
 		4ECF22552C04D9FF007E6DCE /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF22532C04D9FF007E6DCE /* AdTableViewCell.swift */; };
 		4ECF22562C04D9FF007E6DCE /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF22542C04D9FF007E6DCE /* AdTableViewCell.xib */; };
 		4ECF22952C05DB1E007E6DCE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */; };
@@ -52,6 +53,7 @@
 		4E77150E2C07702D0069923D /* PopularCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCityTableViewCell.swift; sourceTree = "<group>"; };
 		4E77150F2C07702D0069923D /* PopularCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCityTableViewCell.xib; sourceTree = "<group>"; };
 		4E7715122C0771970069923D /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		4E77151D2C08867F0069923D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		4ECF22532C04D9FF007E6DCE /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
 		4ECF22542C04D9FF007E6DCE /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
 		4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */,
 				4E7715122C0771970069923D /* UITableViewCell+Extension.swift */,
+				4E77151D2C08867F0069923D /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E77151E2C08867F0069923D /* UIViewController+Extension.swift in Sources */,
 				4E4A3B7B2C03303700EBE319 /* SSUserDefaults.swift in Sources */,
 				4E6E74232C076698006953D7 /* AdDetailViewController.swift in Sources */,
 				4E77150B2C076EDA0069923D /* PopularCityViewController.swift in Sources */,

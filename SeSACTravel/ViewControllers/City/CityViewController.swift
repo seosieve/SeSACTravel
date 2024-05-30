@@ -18,10 +18,10 @@ class CityViewController: UIViewController {
         self.navigationItem.backButtonTitle = ""
         cityTableView.delegate = self
         cityTableView.dataSource = self
-        let cityNib = UINib(nibName: Identifier.CityTableViewCell.description, bundle: nil)
-        cityTableView.register(cityNib, forCellReuseIdentifier: Identifier.CityTableViewCell.description)
-        let adNib = UINib(nibName: Identifier.AdTableViewCell.description, bundle: nil)
-        cityTableView.register(adNib, forCellReuseIdentifier: Identifier.AdTableViewCell.description)
+        let cityNib = UINib(nibName: CityTableViewCell.reuseIdentifier, bundle: nil)
+        cityTableView.register(cityNib, forCellReuseIdentifier: CityTableViewCell.reuseIdentifier)
+        let adNib = UINib(nibName: AdTableViewCell.reuseIdentifier, bundle: nil)
+        cityTableView.register(adNib, forCellReuseIdentifier: AdTableViewCell.reuseIdentifier)
     }
 }
 
@@ -39,12 +39,12 @@ extension CityViewController: UITableViewDelegate, UITableViewDataSource {
         let travel = travelArr[indexPath.row]
  
         if travel.ad {
-            let identifier = Identifier.AdTableViewCell.description
+            let identifier = AdTableViewCell.reuseIdentifier
             let cell =  tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! AdTableViewCell
             cell.configureCell(travel)
             return cell
         } else {
-            let identifier = Identifier.CityTableViewCell.description
+            let identifier = CityTableViewCell.reuseIdentifier
             let cell =  tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CityTableViewCell
             cell.configureCell(travel)
             return cell
@@ -55,14 +55,16 @@ extension CityViewController: UITableViewDelegate, UITableViewDataSource {
         let travel = travelArr[indexPath.row]
         
         if travel.ad {
-            let identifier = Identifier.AdDetailViewController.description
+            let identifier = AdDetailViewController.reuseIdentifier
             let vc = storyboard?.instantiateViewController(withIdentifier: identifier) as! AdDetailViewController
+            vc.ad = travel.title
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true)
         } else {
-            let identifier = Identifier.CityDetailViewController.description
+            let identifier = CityDetailViewController.reuseIdentifier
             let vc = storyboard?.instantiateViewController(withIdentifier: identifier) as! CityDetailViewController
+            vc.travel = travel
             navigationController?.pushViewController(vc, animated: true)
         }
     }

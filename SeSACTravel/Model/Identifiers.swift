@@ -7,15 +7,17 @@
 
 import Foundation
 
+//NewVersion
+protocol ReusableViewProtocol {
+    static var reuseIdentifier: String { get }
+}
+
+//OldVersion
 enum Identifier {
     case shoppingTableViewCell
     case travelTableViewCell
     case restaurantViewCell
-    case CityTableViewCell
-    case AdTableViewCell
     case PopularCityTableViewCell
-    case CityDetailViewController
-    case AdDetailViewController
 
     var description: String {
         return String(describing: self)

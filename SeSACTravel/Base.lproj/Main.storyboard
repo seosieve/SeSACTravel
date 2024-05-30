@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="afE-ru-Uqt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JhO-cB-S81">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -560,31 +560,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관광지 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djv-8x-tWi">
-                                <rect key="frame" x="83" y="396" width="227" height="60"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="742-DX-9CX">
+                                <rect key="frame" x="20" y="79" width="353" height="353"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="742-DX-9CX" secondAttribute="height" multiplier="1:1" id="0uM-H2-l1K"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="히나무나 베이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCc-vZ-qC7">
+                                <rect key="frame" x="134.33333333333334" y="456" width="124.33333333333334" height="27.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv1-O1-HiD">
-                                <rect key="frame" x="153" y="505.99999999999994" width="87.333333333333314" height="34.333333333333314"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="뒤로 가기"/>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="9Iv-XI-bCI" eventType="touchUpInside" id="2Mq-75-hxq"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여행지 설명" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViJ-os-GLJ">
+                                <rect key="frame" x="35" y="503.66666666666669" width="323" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Orh-I8-xaT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mv1-O1-HiD" firstAttribute="centerX" secondItem="2aX-1h-XZN" secondAttribute="centerX" id="NX8-a7-Sos"/>
-                            <constraint firstItem="djv-8x-tWi" firstAttribute="centerX" secondItem="2aX-1h-XZN" secondAttribute="centerX" id="aLb-IW-vNh"/>
-                            <constraint firstItem="djv-8x-tWi" firstAttribute="centerY" secondItem="2aX-1h-XZN" secondAttribute="centerY" id="eAK-ao-UWQ"/>
-                            <constraint firstItem="mv1-O1-HiD" firstAttribute="top" secondItem="djv-8x-tWi" secondAttribute="bottom" constant="50" id="mxf-eA-Mxy"/>
+                            <constraint firstItem="Orh-I8-xaT" firstAttribute="trailing" secondItem="742-DX-9CX" secondAttribute="trailing" constant="20" id="8gi-9D-kyL"/>
+                            <constraint firstItem="WCc-vZ-qC7" firstAttribute="centerX" secondItem="2aX-1h-XZN" secondAttribute="centerX" id="Nf7-Hb-aX5"/>
+                            <constraint firstItem="742-DX-9CX" firstAttribute="top" secondItem="Orh-I8-xaT" secondAttribute="top" constant="20" id="RFq-xc-dDc"/>
+                            <constraint firstItem="742-DX-9CX" firstAttribute="leading" secondItem="Orh-I8-xaT" secondAttribute="leading" constant="20" id="SsT-ZE-126"/>
+                            <constraint firstItem="ViJ-os-GLJ" firstAttribute="leading" secondItem="Orh-I8-xaT" secondAttribute="leading" constant="35" id="Zbj-OG-HmW"/>
+                            <constraint firstItem="ViJ-os-GLJ" firstAttribute="top" secondItem="WCc-vZ-qC7" secondAttribute="bottom" constant="20" id="hal-CB-dnK"/>
+                            <constraint firstItem="ViJ-os-GLJ" firstAttribute="centerX" secondItem="2aX-1h-XZN" secondAttribute="centerX" id="nKb-p1-OeW"/>
+                            <constraint firstItem="WCc-vZ-qC7" firstAttribute="top" secondItem="742-DX-9CX" secondAttribute="bottom" constant="24" id="nM3-PJ-RNa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="ViJ-os-GLJ" id="Ta2-hN-52V"/>
+                        <outlet property="detailImageView" destination="742-DX-9CX" id="8ZH-ud-64y"/>
+                        <outlet property="detailTitleLabel" destination="WCc-vZ-qC7" id="bg4-At-7iY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfH-T5-UiP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -665,14 +678,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYu-C7-lC7">
-                                <rect key="frame" x="104.66666666666669" y="396" width="184" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고 화면" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYu-C7-lC7">
+                                <rect key="frame" x="40" y="159" width="313" height="60"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sN9-kd-lMg">
-                                <rect key="frame" x="153" y="505.99999999999994" width="87.333333333333314" height="34.333333333333314"/>
+                                <rect key="frame" x="153" y="269" width="87.333333333333314" height="34.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="뒤로 가기"/>
@@ -685,12 +698,16 @@
                         <viewLayoutGuide key="safeArea" id="RDA-zd-Fxe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bYu-C7-lC7" firstAttribute="leading" secondItem="RDA-zd-Fxe" secondAttribute="leading" constant="40" id="4Fi-mE-i37"/>
                             <constraint firstItem="sN9-kd-lMg" firstAttribute="top" secondItem="bYu-C7-lC7" secondAttribute="bottom" constant="50" id="KLK-IU-DiN"/>
                             <constraint firstItem="bYu-C7-lC7" firstAttribute="centerX" secondItem="Uzg-wv-6Nr" secondAttribute="centerX" id="e7I-A6-W4a"/>
                             <constraint firstItem="sN9-kd-lMg" firstAttribute="centerX" secondItem="Uzg-wv-6Nr" secondAttribute="centerX" id="iAY-Xp-31B"/>
-                            <constraint firstItem="bYu-C7-lC7" firstAttribute="centerY" secondItem="Uzg-wv-6Nr" secondAttribute="centerY" id="lPk-Le-dHW"/>
+                            <constraint firstItem="bYu-C7-lC7" firstAttribute="top" secondItem="RDA-zd-Fxe" secondAttribute="top" constant="100" id="opt-pU-9Hs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adLabel" destination="bYu-C7-lC7" id="C9n-FA-jvY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNl-tw-EKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
