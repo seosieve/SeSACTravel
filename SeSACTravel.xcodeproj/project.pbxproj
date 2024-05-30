@@ -20,6 +20,7 @@
 		4E7715112C07702D0069923D /* PopularCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E77150F2C07702D0069923D /* PopularCityTableViewCell.xib */; };
 		4E7715132C0771970069923D /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7715122C0771970069923D /* UITableViewCell+Extension.swift */; };
 		4E77151E2C08867F0069923D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77151D2C08867F0069923D /* UIViewController+Extension.swift */; };
+		4E7715202C088CB40069923D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77151F2C088CB40069923D /* MapViewController.swift */; };
 		4ECF22552C04D9FF007E6DCE /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF22532C04D9FF007E6DCE /* AdTableViewCell.swift */; };
 		4ECF22562C04D9FF007E6DCE /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF22542C04D9FF007E6DCE /* AdTableViewCell.xib */; };
 		4ECF22952C05DB1E007E6DCE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */; };
@@ -54,6 +55,7 @@
 		4E77150F2C07702D0069923D /* PopularCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCityTableViewCell.xib; sourceTree = "<group>"; };
 		4E7715122C0771970069923D /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		4E77151D2C08867F0069923D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		4E77151F2C088CB40069923D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4ECF22532C04D9FF007E6DCE /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
 		4ECF22542C04D9FF007E6DCE /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
 		4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				4EFC6B612C01F52A00421377 /* RestaurantTableViewCell.swift */,
 				4EFC6B5F2C01F3E300421377 /* RestaurantTableViewController.swift */,
+				4E77151F2C088CB40069923D /* MapViewController.swift */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				4EFC6B362C00940C00421377 /* AppDelegate.swift in Sources */,
 				4EFC6B522C01E5EE00421377 /* TravelTableViewController.swift in Sources */,
 				4EFC6B602C01F3E300421377 /* RestaurantTableViewController.swift in Sources */,
+				4E7715202C088CB40069923D /* MapViewController.swift in Sources */,
 				4E6E74212C07668F006953D7 /* CityDetailViewController.swift in Sources */,
 				4ECF22952C05DB1E007E6DCE /* UIColor+Extension.swift in Sources */,
 				4EFC6B622C01F52A00421377 /* RestaurantTableViewCell.swift in Sources */,
