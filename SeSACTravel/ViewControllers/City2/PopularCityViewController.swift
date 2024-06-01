@@ -13,45 +13,48 @@ class PopularCityViewController: UIViewController {
     @IBOutlet var segmentControl: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
     
-    let identifier = Identifier.PopularCityTableViewCell.description
-    let cityArr = CityInfo.city
-    lazy var selectedCityArr = cityArr
+    let identifier = PopularCityTableViewCell.identifier
+    var selectedCityArr = CityInfo.city {
+        didSet { tableView.reloadData() }
+    }
     var targetText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setViews()
+    }
+    
+    func setViews() {
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: identifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: identifier)
+        tableView.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
         tableView.rowHeight = 170
         
         searchBar.delegate = self
         searchBar.placeholder = "검색어를 입력해주세요."
     }
     
+    @IBAction func controlValueChanged(_ sender: UISegmentedControl) {
+        selectedCityArr = currentControl()
+    }
+    
     func currentControl() -> [City] {
-        let index = segmentControl.selectedSegmentIndex
         var resultArr = [City]()
         
-        switch index {
+        switch segmentControl.selectedSegmentIndex {
         case 1:
-            resultArr = cityArr.filter{ $0.domestic_travel }
+            resultArr = CityInfo.city.filter{ $0.domestic_travel }
         case 2:
-            resultArr = cityArr.filter{ !$0.domestic_travel }
+            resultArr = CityInfo.city.filter{ !$0.domestic_travel }
         default:
-            resultArr = cityArr
+            resultArr = CityInfo.city
         }
         
         return resultArr
     }
-    
-    @IBAction func controlValueChanged(_ sender: UISegmentedControl) {
-        selectedCityArr = currentControl()
-        tableView.reloadData()
-    }
 }
 
+//MARK: - UITableViewDelegate, UITableViewDataSource
 extension PopularCityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedCityArr.count
@@ -66,6 +69,7 @@ extension PopularCityViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
+//MARK: - UISearchBarDelegate
 extension PopularCityViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchLogic()
@@ -96,6 +100,5 @@ extension PopularCityViewController: UISearchBarDelegate {
         }
         
         selectedCityArr = resultCityArr
-        tableView.reloadData()
     }
 }

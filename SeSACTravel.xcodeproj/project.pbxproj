@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E4A3B7B2C03303700EBE319 /* SSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A3B7A2C03303700EBE319 /* SSUserDefaults.swift */; };
 		4E4A3B8E2C04C62D00EBE319 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A3B8D2C04C62D00EBE319 /* TravelModel.swift */; };
 		4E4A3B912C04C79A00EBE319 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E4A3B902C04C79A00EBE319 /* CityTableViewCell.xib */; };
 		4E4A3B922C04C79A00EBE319 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A3B8F2C04C79A00EBE319 /* CityTableViewCell.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4E4A3B7A2C03303700EBE319 /* SSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUserDefaults.swift; sourceTree = "<group>"; };
 		4E4A3B8D2C04C62D00EBE319 /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		4E4A3B8F2C04C79A00EBE319 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		4E4A3B902C04C79A00EBE319 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
@@ -174,11 +172,10 @@
 			isa = PBXGroup;
 			children = (
 				4E77152F2C0ACABD0069923D /* ShoppingModel.swift */,
-				4E4A3B8D2C04C62D00EBE319 /* TravelModel.swift */,
 				4EFC6B4E2C01E40000421377 /* MagazineInfo.swift */,
+				4E4A3B8D2C04C62D00EBE319 /* TravelModel.swift */,
 				4E6E74242C076D04006953D7 /* CityInfo.swift */,
 				4EFC6B5A2C01F11C00421377 /* Restaurant.swift */,
-				4E4A3B7A2C03303700EBE319 /* SSUserDefaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,7 +290,6 @@
 			files = (
 				4E77151E2C08867F0069923D /* UIViewController+Extension.swift in Sources */,
 				4E7715302C0ACABD0069923D /* ShoppingModel.swift in Sources */,
-				4E4A3B7B2C03303700EBE319 /* SSUserDefaults.swift in Sources */,
 				4E6E74232C076698006953D7 /* AdDetailViewController.swift in Sources */,
 				4E77150B2C076EDA0069923D /* PopularCityViewController.swift in Sources */,
 				4E6E74252C076D04006953D7 /* CityInfo.swift in Sources */,

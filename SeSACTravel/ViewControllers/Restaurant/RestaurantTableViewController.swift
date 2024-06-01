@@ -14,8 +14,10 @@ class RestaurantTableViewController: UITableViewController {
     @IBOutlet var searchButton: UIButton!
     @IBOutlet var textField: UITextField!
     
-    let originalArray = RestaurantList().restaurantArray
-    var restaurantArray = RestaurantList().restaurantArray
+    var restaurantArray: [Restaurant] = RestaurantList.restaurantArray {
+        didSet { tableView.reloadData() }
+    }
+    
     lazy var likeArr = Array(repeating: false, count: restaurantArray.count)
     
     override func viewDidLoad() {
@@ -37,36 +39,18 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     func searchLogic() {
-        guard let text = textField.text else { return }
-        if text.isEmpty {
-            restaurantArray = originalArray
-            tableView.reloadData()
+        restaurantArray = RestaurantList.restaurantArray
+        guard let text = textField.text, !text.isEmpty else { return }
+        
+        if let maxPrice = Int(text) {
+            restaurantArray = restaurantArray.filter{ $0.price <= maxPrice }
         } else {
-            //문자일때
-            if Int(text) == nil {
-                restaurantArray = []
-                for item in originalArray {
-                    if item.category.contains(text) {
-                        restaurantArray.append(item)
-                    }
-                }
-                tableView.reloadData()
-                print("aa")
-            } else {
-                //숫자일때
-                restaurantArray = []
-                for item in originalArray {
-                    if item.price <= Int(text)! {
-                        restaurantArray.append(item)
-                    }
-                }
-                tableView.reloadData()
-                print("bb")
-            }
+            restaurantArray = restaurantArray.filter{ $0.category.contains(text) }
         }
     }
 }
 
+//MARK: - TableView
 extension RestaurantTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurantArray.count
@@ -83,39 +67,22 @@ extension RestaurantTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let restaurant = restaurantArray[indexPath.row]
-        let identifier = Identifier.restaurantViewCell.description
+        let like = likeArr[indexPath.row]
+        let identifier = RestaurantTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! RestaurantTableViewCell
-        
-        
-        let url = URL(string: restaurant.image)
-        cell.restaurantImageView.kf.setImage(with: url)
-        cell.restaurantImageView.layer.cornerRadius = 8
-        cell.restaurantImageView.layer.masksToBounds = true
-        cell.restaurantImageView.contentMode = .scaleAspectFill
-        
-        cell.titleLabel.text = restaurant.name
-        cell.locationLabel.text = restaurant.address
-        cell.numberLabel.text = restaurant.phoneNumber
-        cell.priceLabel.text = restaurant.price.formatted()
-        cell.categoryLabel.text = restaurant.category
-        
-        let likeImage = likeArr[indexPath.row] ? "heart.fill" : "heart"
-        let likeColor: UIColor = likeArr[indexPath.row] ? .darkGray : .systemGray2
-        cell.likeButton.tag = indexPath.row
-        cell.likeButton.setImage(UIImage(systemName: likeImage), for: .normal)
-        cell.likeButton.tintColor = likeColor
+        cell.configureCell(restaurant: restaurant, like: like)
         cell.likeButton.addTarget(self, action: #selector(likeButtonPressed), for: .touchUpInside)
-        
         cell.flagButton.addTarget(self, action: #selector(flagButtonPressed), for: .touchUpInside)
-        
         cell.shareButton.addTarget(self, action: #selector(shareButtonPressed), for: .touchUpInside)
         
         return cell
     }
     
     @objc func likeButtonPressed(_ sender: UIButton) {
-        likeArr[sender.tag].toggle()
-        tableView.reloadData()
+        let hitPoint = sender.convert(CGPoint.zero, to: tableView)
+        guard let indexPath = tableView.indexPathForRow(at: hitPoint) else { return }
+        likeArr[indexPath.row].toggle()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     @objc func flagButtonPressed(_ sender: UIButton) {

@@ -27,4 +27,24 @@ class RestaurantTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         selectionAnimation()
     }
+    
+    func configureUI() {
+        restaurantImageView.layer.cornerRadius = 8
+        restaurantImageView.layer.masksToBounds = true
+        restaurantImageView.contentMode = .scaleAspectFill
+    }
+    
+    func configureCell(restaurant: Restaurant, like: Bool) {
+        let url = URL(string: restaurant.image)
+        restaurantImageView.kf.setImage(with: url)
+        titleLabel.text = restaurant.name
+        locationLabel.text = restaurant.address
+        numberLabel.text = restaurant.phoneNumber
+        priceLabel.text = restaurant.price.formatted()
+        categoryLabel.text = restaurant.category
+        let likeImage = like ? "heart.fill" : "heart"
+        let likeColor: UIColor = like ? .darkGray : .systemGray2
+        likeButton.setImage(UIImage(systemName: likeImage), for: .normal)
+        likeButton.tintColor = likeColor
+    }
 }

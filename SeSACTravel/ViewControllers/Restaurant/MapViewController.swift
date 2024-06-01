@@ -12,7 +12,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     
-    let restaurantArr = RestaurantList().restaurantArray
+    let restaurantArr = RestaurantList.restaurantArray
     
     override func viewDidLoad() {
         super.viewDidLoad()

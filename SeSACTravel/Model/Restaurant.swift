@@ -21,7 +21,7 @@ struct Restaurant {
 }
 
 struct RestaurantList {
-    let restaurantArray: [Restaurant] = [
+    static let restaurantArray: [Restaurant] = [
         Restaurant(
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170712_44%2F1499829806371zeBdS_JPEG%2FIMG_1167.jpg",
             latitude: 37.514746,

@@ -15,6 +15,7 @@ class CityTableViewCell: UITableViewCell {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var saveLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
+    @IBOutlet var starStackView: UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,5 +45,11 @@ class CityTableViewCell: UITableViewCell {
         let color: UIColor = travel.like! ? .red : .white
         likeButton.setImage(UIImage(systemName: image), for: .normal)
         likeButton.tintColor = color
+        
+        let grade = Int(floor(travel.grade!))
+        for index in 0..<grade {
+            guard let starImageView = starStackView.subviews[index] as? UIImageView else { return }
+            starImageView.tintColor = .systemYellow
+        }
     }
 }

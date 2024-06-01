@@ -15,8 +15,6 @@ protocol ReusableIdentifierProtocol {
 
 //OldVersion
 enum Identifier {
-    case travelTableViewCell
-    case restaurantViewCell
     case PopularCityTableViewCell
 
     var description: String {

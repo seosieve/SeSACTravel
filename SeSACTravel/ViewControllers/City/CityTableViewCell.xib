@@ -142,6 +142,7 @@
                 <outlet property="likeButton" destination="FUW-fD-19S" id="sHV-Es-cUv"/>
                 <outlet property="saveLabel" destination="hMw-0h-6fp" id="Tkh-XA-Je4"/>
                 <outlet property="scoreLabel" destination="qzx-hY-MhJ" id="MEW-4A-FCh"/>
+                <outlet property="starStackView" destination="yi8-4f-dgQ" id="ZzG-Bl-QGY"/>
                 <outlet property="subTitleLabel" destination="vn4-vu-j6q" id="6Xm-ae-x8z"/>
                 <outlet property="titleLabel" destination="MfH-mt-g5l" id="KXT-Wp-GUc"/>
             </connections>

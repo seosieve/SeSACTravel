@@ -24,7 +24,7 @@ extension TravelTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let magazine = magazineArr[indexPath.row]
-        let identifier = Identifier.travelTableViewCell.description
+        let identifier = TravelTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TravelTableViewCell
         cell.configureCell(magazine)
         return cell
