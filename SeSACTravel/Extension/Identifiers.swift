@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import UIKit
 
 //NewVersion
-protocol ReusableViewProtocol {
-    static var reuseIdentifier: String { get }
+protocol ReusableIdentifierProtocol {
+    static var identifier: String { get }
 }
 
 //OldVersion
 enum Identifier {
-    case shoppingTableViewCell
     case travelTableViewCell
     case restaurantViewCell
     case PopularCityTableViewCell

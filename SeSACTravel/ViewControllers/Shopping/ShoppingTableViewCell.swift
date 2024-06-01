@@ -16,10 +16,23 @@ class ShoppingTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         selectionAnimation()
+    }
+    
+    func configureUI() {
+        containerView.layer.cornerRadius = 8
+    }
+    
+    func configureCell(shopping: Shopping) {
+        titleLable.text = shopping.title
+        let checkButtonName = shopping.finished ? "checkmark.square.fill" : "checkmark.square"
+        checkButton.setImage(UIImage(systemName: checkButtonName), for: .normal)
+        let favoredButtonName = shopping.favorited ? "star.fill" : "star"
+        favoredButton.setImage(UIImage(systemName: favoredButtonName), for: .normal)
     }
 }

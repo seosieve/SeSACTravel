@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension UITableViewCell: ReusableViewProtocol {
+extension UITableViewCell: ReusableIdentifierProtocol {
     //Automatically Create Identifier
-    static var reuseIdentifier: String {
+    static var identifier: String {
         return String(describing: self)
     }
     

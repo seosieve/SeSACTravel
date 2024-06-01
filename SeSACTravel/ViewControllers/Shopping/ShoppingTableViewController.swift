@@ -7,33 +7,6 @@
 
 import UIKit
 
-struct Shopping: Codable {
-    let title: String
-    var finished: Bool = false
-    var favorited: Bool = false
-}
-
-class UserDefaultsManager {
-    private static let userDefault = UserDefaults.standard
-    
-    static func set<T: Codable>(_ value: T, forKey key: String) {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(value) {
-            userDefault.set(encoded, forKey: key)
-        }
-    }
-    
-    static func get<T: Codable>(forKey key: String, as type: T.Type) -> T? {
-        if let data = userDefault.data(forKey: key) {
-            let decoder = JSONDecoder()
-            if let decoded = try? decoder.decode(type, from: data) {
-                return decoded
-            }
-        }
-        return nil
-    }
-}
-
 class ShoppingTableViewController: UITableViewController {
     
     @IBOutlet var shoppingTextField: UITextField!
@@ -46,37 +19,37 @@ class ShoppingTableViewController: UITableViewController {
         super.viewDidLoad()
         setShoppingList()
         setViews()
-        print(shoppingList)
     }
     
     func setShoppingList() {
         for key in UserDefaults.standard.dictionaryRepresentation().keys {
-            if key.hasPrefix("shopping_") {
-                if let shopping = UserDefaultsManager.get(forKey: key, as: Shopping.self) {
-                    shoppingList.append(Shopping(title: shopping.title, finished: shopping.finished, favorited: shopping.favorited))
-                }
+            if let shopping = UserDefaultsManager.get(key: key) {
+                shoppingList.append(shopping)
             }
         }
         shoppingList.sort{$0.title < $1.title}
+        tableView.reloadData()
     }
     
     func setViews() {
-        tableView.rowHeight = 66
-        
+        shoppingTextField.delegate = self
         containerView.layer.cornerRadius = 8
         addButton.layer.cornerRadius = 8
+        tableView.rowHeight = 66
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        let text = shoppingTextField.text ?? ""
+        shoppingListAddAction()
+    }
+    
+    func shoppingListAddAction() {
+        guard let text = shoppingTextField.text else { return }
+        if text.isEmpty { return }
         
-        if !text.isEmpty {
-            let shopping = Shopping(title: text)
-            UserDefaultsManager.set(shopping, forKey: "shopping_\(text)")
-            shoppingList.append(shopping)
-            shoppingTextField.text = ""
-        }
-        
+        let shopping = Shopping(title: text)
+        UserDefaultsManager.set(shopping, key: text)
+        shoppingList.append(shopping)
+        shoppingTextField.text = ""
         tableView.reloadData()
     }
 }
@@ -88,38 +61,62 @@ extension ShoppingTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let shopping = shoppingList[indexPath.row]
-        let identifier = Identifier.shoppingTableViewCell.description
+        let identifier = ShoppingTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ShoppingTableViewCell
-        cell.containerView.layer.cornerRadius = 8
-        cell.titleLable.text = shopping.title
-        
-        cell.checkButton.tag = indexPath.row
-        let checkButtonName = shopping.finished ? "checkmark.square.fill" : "checkmark.square"
-        cell.checkButton.setImage(UIImage(systemName: checkButtonName), for: .normal)
+        cell.configureCell(shopping: shopping)
         cell.checkButton.addTarget(self, action: #selector(checkButtonPressed), for: .touchUpInside)
-        
-        cell.favoredButton.tag = indexPath.row
-        let favoredButtonName = shopping.favorited ? "star.fill" : "star"
-        cell.favoredButton.setImage(UIImage(systemName: favoredButtonName), for: .normal)
         cell.favoredButton.addTarget(self, action: #selector(favoredButtonPressed), for: .touchUpInside)
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let remove = UIContextualAction(style: .normal, title: nil) { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+            self.shoppingListDeleteAction(indexPath: indexPath)
+            success(true)
+        }
+        remove.backgroundColor = .systemPink.withAlphaComponent(0.6)
+        remove.image = UIImage(systemName: "trash")
+        return UISwipeActionsConfiguration(actions: [remove])
+    }
+    
+    func shoppingListDeleteAction(indexPath: IndexPath) {
+        UserDefaultsManager.delete(key: shoppingList[indexPath.row].title)
+        shoppingList.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
     @objc func checkButtonPressed(_ sender: UIButton) {
-        shoppingList[sender.tag].finished.toggle()
-        let shopping = shoppingList[sender.tag]
-        UserDefaultsManager.set(shopping, forKey: "shopping_\(shopping.title)")
-        tableView.reloadRows(at: [[0,sender.tag]], with: .automatic)
-        print(shoppingList)
+        guard let indexPath = getIndexPath(sender) else { return }
+        
+        shoppingList[indexPath.row].finished.toggle()
+        let shopping = shoppingList[indexPath.row]
+        UserDefaultsManager.set(shopping, key: shopping.title)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     @objc func favoredButtonPressed(_ sender: UIButton) {
-        shoppingList[sender.tag].favorited.toggle()
-        let shopping = shoppingList[sender.tag]
-        UserDefaultsManager.set(shopping, forKey: "shopping_\(shopping.title)")
-        tableView.reloadRows(at: [[0,sender.tag]], with: .automatic)
+        guard let indexPath = getIndexPath(sender) else { return }
+        
+        shoppingList[indexPath.row].favorited.toggle()
+        let shopping = shoppingList[indexPath.row]
+        UserDefaultsManager.set(shopping, key: shopping.title)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    func getIndexPath(_ sender: UIButton) -> IndexPath? {
+        let hitPoint = sender.convert(CGPoint.zero, to: tableView)
+        guard let indexPath = tableView.indexPathForRow(at: hitPoint) else { return nil }
+        return indexPath
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension ShoppingTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        shoppingListAddAction()
+        textField.resignFirstResponder()
+        return true
     }
 }
