@@ -21,9 +21,20 @@
 		4E77151E2C08867F0069923D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77151D2C08867F0069923D /* UIViewController+Extension.swift */; };
 		4E7715202C088CB40069923D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77151F2C088CB40069923D /* MapViewController.swift */; };
 		4E7715302C0ACABD0069923D /* ShoppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E77152F2C0ACABD0069923D /* ShoppingModel.swift */; };
+		4E7715322C0B11710069923D /* ChattingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7715312C0B11710069923D /* ChattingData.swift */; };
+		4E7715352C0B11C60069923D /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7715342C0B11C60069923D /* ChattingViewController.swift */; };
+		4E7715372C0B11CE0069923D /* ChattingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7715362C0B11CE0069923D /* ChattingRoomViewController.swift */; };
+		4E77153A2C0B16540069923D /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7715382C0B16540069923D /* FriendsTableViewCell.swift */; };
+		4E77153B2C0B16540069923D /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E7715392C0B16540069923D /* FriendsTableViewCell.xib */; };
 		4ECF22552C04D9FF007E6DCE /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF22532C04D9FF007E6DCE /* AdTableViewCell.swift */; };
 		4ECF22562C04D9FF007E6DCE /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF22542C04D9FF007E6DCE /* AdTableViewCell.xib */; };
 		4ECF22952C05DB1E007E6DCE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */; };
+		4EF10F372C0DB34E00A35189 /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF10F362C0DB34E00A35189 /* String+Extenstion.swift */; };
+		4EF10F392C0DB37D00A35189 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF10F382C0DB37D00A35189 /* Date+Extension.swift */; };
+		4EF10F3C2C0DB8A100A35189 /* BubbleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF10F3B2C0DB8A100A35189 /* BubbleTableViewCell.xib */; };
+		4EF10F3D2C0DB8A100A35189 /* BubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF10F3A2C0DB8A100A35189 /* BubbleTableViewCell.swift */; };
+		4EF10F402C0DBCDC00A35189 /* MyBubbleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF10F3F2C0DBCDC00A35189 /* MyBubbleTableViewCell.xib */; };
+		4EF10F412C0DBCDC00A35189 /* MyBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF10F3E2C0DBCDC00A35189 /* MyBubbleTableViewCell.swift */; };
 		4EFC6B362C00940C00421377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B352C00940C00421377 /* AppDelegate.swift */; };
 		4EFC6B382C00940C00421377 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFC6B372C00940C00421377 /* SceneDelegate.swift */; };
 		4EFC6B3D2C00940C00421377 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4EFC6B3C2C00940C00421377 /* Base */; };
@@ -56,9 +67,20 @@
 		4E77151D2C08867F0069923D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		4E77151F2C088CB40069923D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4E77152F2C0ACABD0069923D /* ShoppingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingModel.swift; sourceTree = "<group>"; };
+		4E7715312C0B11710069923D /* ChattingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChattingData.swift; sourceTree = "<group>"; };
+		4E7715342C0B11C60069923D /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		4E7715362C0B11CE0069923D /* ChattingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomViewController.swift; sourceTree = "<group>"; };
+		4E7715382C0B16540069923D /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		4E7715392C0B16540069923D /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 		4ECF22532C04D9FF007E6DCE /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
 		4ECF22542C04D9FF007E6DCE /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
 		4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4EF10F362C0DB34E00A35189 /* String+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenstion.swift"; sourceTree = "<group>"; };
+		4EF10F382C0DB37D00A35189 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		4EF10F3A2C0DB8A100A35189 /* BubbleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTableViewCell.swift; sourceTree = "<group>"; };
+		4EF10F3B2C0DB8A100A35189 /* BubbleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BubbleTableViewCell.xib; sourceTree = "<group>"; };
+		4EF10F3E2C0DBCDC00A35189 /* MyBubbleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBubbleTableViewCell.swift; sourceTree = "<group>"; };
+		4EF10F3F2C0DBCDC00A35189 /* MyBubbleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBubbleTableViewCell.xib; sourceTree = "<group>"; };
 		4EFC6B322C00940C00421377 /* SeSACTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFC6B352C00940C00421377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EFC6B372C00940C00421377 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,12 +135,29 @@
 			path = City2;
 			sourceTree = "<group>";
 		};
+		4E7715332C0B119D0069923D /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				4E7715342C0B11C60069923D /* ChattingViewController.swift */,
+				4E7715382C0B16540069923D /* FriendsTableViewCell.swift */,
+				4E7715392C0B16540069923D /* FriendsTableViewCell.xib */,
+				4E7715362C0B11CE0069923D /* ChattingRoomViewController.swift */,
+				4EF10F3A2C0DB8A100A35189 /* BubbleTableViewCell.swift */,
+				4EF10F3B2C0DB8A100A35189 /* BubbleTableViewCell.xib */,
+				4EF10F3E2C0DBCDC00A35189 /* MyBubbleTableViewCell.swift */,
+				4EF10F3F2C0DBCDC00A35189 /* MyBubbleTableViewCell.xib */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
 		4ECF22932C05DB0F007E6DCE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				4ECF22942C05DB1E007E6DCE /* UIColor+Extension.swift */,
 				4E7715122C0771970069923D /* UITableViewCell+Extension.swift */,
 				4E77151D2C08867F0069923D /* UIViewController+Extension.swift */,
+				4EF10F362C0DB34E00A35189 /* String+Extenstion.swift */,
+				4EF10F382C0DB37D00A35189 /* Date+Extension.swift */,
 				4EFC6B552C01E6E700421377 /* Identifiers.swift */,
 			);
 			path = Extension;
@@ -164,6 +203,7 @@
 				4EFC6B5E2C01F3A100421377 /* Restaurant */,
 				4E4A3B932C04C7A100EBE319 /* City */,
 				4E7715092C076EB80069923D /* City2 */,
+				4E7715332C0B119D0069923D /* Chatting */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,6 +216,7 @@
 				4E4A3B8D2C04C62D00EBE319 /* TravelModel.swift */,
 				4E6E74242C076D04006953D7 /* CityInfo.swift */,
 				4EFC6B5A2C01F11C00421377 /* Restaurant.swift */,
+				4E7715312C0B11710069923D /* ChattingData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,11 +314,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E7715112C07702D0069923D /* PopularCityTableViewCell.xib in Resources */,
+				4EF10F402C0DBCDC00A35189 /* MyBubbleTableViewCell.xib in Resources */,
 				4ECF22562C04D9FF007E6DCE /* AdTableViewCell.xib in Resources */,
 				4EFC6B3F2C00940D00421377 /* Assets.xcassets in Resources */,
 				4EFC6B422C00940D00421377 /* Base in Resources */,
 				4E4A3B912C04C79A00EBE319 /* CityTableViewCell.xib in Resources */,
 				4EFC6B3D2C00940C00421377 /* Base in Resources */,
+				4E77153B2C0B16540069923D /* FriendsTableViewCell.xib in Resources */,
+				4EF10F3C2C0DB8A100A35189 /* BubbleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +335,7 @@
 				4E77151E2C08867F0069923D /* UIViewController+Extension.swift in Sources */,
 				4E7715302C0ACABD0069923D /* ShoppingModel.swift in Sources */,
 				4E6E74232C076698006953D7 /* AdDetailViewController.swift in Sources */,
+				4EF10F3D2C0DB8A100A35189 /* BubbleTableViewCell.swift in Sources */,
 				4E77150B2C076EDA0069923D /* PopularCityViewController.swift in Sources */,
 				4E6E74252C076D04006953D7 /* CityInfo.swift in Sources */,
 				4EFC6B362C00940C00421377 /* AppDelegate.swift in Sources */,
@@ -301,17 +346,24 @@
 				4ECF22952C05DB1E007E6DCE /* UIColor+Extension.swift in Sources */,
 				4EFC6B622C01F52A00421377 /* RestaurantTableViewCell.swift in Sources */,
 				4EFC6B562C01E6E700421377 /* Identifiers.swift in Sources */,
+				4EF10F392C0DB37D00A35189 /* Date+Extension.swift in Sources */,
+				4E77153A2C0B16540069923D /* FriendsTableViewCell.swift in Sources */,
 				4EFC6B542C01E5FC00421377 /* TravelTableViewCell.swift in Sources */,
 				4E7715102C07702D0069923D /* PopularCityTableViewCell.swift in Sources */,
+				4E7715322C0B11710069923D /* ChattingData.swift in Sources */,
 				4EFC6B4D2C00955400421377 /* ShoppingTableViewController.swift in Sources */,
 				4ECF22552C04D9FF007E6DCE /* AdTableViewCell.swift in Sources */,
 				4E4A3B922C04C79A00EBE319 /* CityTableViewCell.swift in Sources */,
 				4E4A3B8E2C04C62D00EBE319 /* TravelModel.swift in Sources */,
 				4EFC6B4B2C00954100421377 /* ShoppingTableViewCell.swift in Sources */,
 				4E4A3B952C04C83400EBE319 /* CityViewController.swift in Sources */,
+				4EF10F372C0DB34E00A35189 /* String+Extenstion.swift in Sources */,
 				4EFC6B382C00940C00421377 /* SceneDelegate.swift in Sources */,
 				4E7715132C0771970069923D /* UITableViewCell+Extension.swift in Sources */,
+				4E7715352C0B11C60069923D /* ChattingViewController.swift in Sources */,
 				4EFC6B4F2C01E40000421377 /* MagazineInfo.swift in Sources */,
+				4EF10F412C0DBCDC00A35189 /* MyBubbleTableViewCell.swift in Sources */,
+				4E7715372C0B11CE0069923D /* ChattingRoomViewController.swift in Sources */,
 				4EFC6B5B2C01F11C00421377 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,7 +24,7 @@ class AdTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
-        adBackgroundView.backgroundColor = UIColor.randomColor
+        adBackgroundView.backgroundColor = .randomColor
         adBackgroundView.layer.cornerRadius = 8
         adLabel.layer.masksToBounds = true
         adLabel.layer.cornerRadius = 8
