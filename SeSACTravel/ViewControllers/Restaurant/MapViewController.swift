@@ -7,16 +7,19 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     
     let restaurantArr = RestaurantList.restaurantArray
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
+        locationManager.delegate = self
     }
     
     func setViews() {
@@ -40,6 +43,10 @@ class MapViewController: UIViewController {
     
     @objc func filterButtonPressed() {
         filterActionSheet()
+    }
+    
+    @IBAction func currentLocationButtonPressed(_ sender: UIButton) {
+        checkDeviceLocationAuthorization()
     }
     
     func filterActionSheet() {
@@ -82,6 +89,75 @@ class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: MKMapViewDelegate {
+//MARK: - MKMapViewDelegate, CLLocationManagerDelegate
+extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "something")
+        annotationView.markerTintColor = .systemPurple
+        return annotationView
+    }
     
+    func checkDeviceLocationAuthorization() {
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                let authorization: CLAuthorizationStatus
+                if #available(iOS 14.0, *) {
+                    authorization = self.locationManager.authorizationStatus
+                } else {
+                    authorization = CLLocationManager.authorizationStatus()
+                }
+                DispatchQueue.main.async {
+                    self.checkCurrentLocationAuthorization(state: authorization)
+                }
+            } else {
+                print("User Device Location Authorization Denied")
+            }
+        }
+    }
+    
+    func checkCurrentLocationAuthorization(state: CLAuthorizationStatus) {
+        switch state {
+        case .notDetermined:
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestWhenInUseAuthorization()
+        case .denied:
+            showLocationSettingAlert()
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        default:
+            print("Error")
+        }
+    }
+    
+    func showLocationSettingAlert() {
+        let alert = UIAlertController(title: "위치 정보 이용", message: "위치 서비스를 이용할 수 없습니다. 기기의 '설정 > 개인정보 보호'에서 위치 서비스를 켜주세요.", preferredStyle: .alert)
+        let goSettingAction = UIAlertAction(title: "설정으로 이동", style: .default) { _ in
+            guard let setting = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(setting)
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(goSettingAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
+    
+    func setUpRegionAndAnnotation(coordinate: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 400, longitudinalMeters: 400)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    //Location Updated
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let coordinate = locations.last?.coordinate else { return }
+        setUpRegionAndAnnotation(coordinate: coordinate)
+        locationManager.stopUpdatingLocation()
+    }
+    //Location Update Failed
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        print("Location Update Failed")
+    }
+    //Change Authorization
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkDeviceLocationAuthorization()
+    }
 }
